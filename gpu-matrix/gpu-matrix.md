@@ -1,4 +1,3 @@
-```markdown
 # GPU CUDA Benchmark Analysis Report
 **Repository:** `adamhott/gpu-performance-benchmarks` — `performance-results/CUDA/`  
 **Date of Analysis:** 2026-05-04  
