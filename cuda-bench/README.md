@@ -53,6 +53,33 @@ Each invocation of `run_all.sh` recreates `results/results.csv` with the header 
 
 For cost tracking, record the pod’s GPU type, hourly rate, and the wall time reported by the script or your session timer so you can join those fields with `gflops` in later analysis.
 
+### C++ host benchmarks on RunPod
+
+The **`C++/`** tree is **CPU-only** (no `nvcc`); it is useful for host-side reference timings on the **same pod** you use for CUDA. PyTorch/CUDA **devel** templates on RunPod usually include **`g++`**; if `g++ --version` fails, install a toolchain as root (images often have no `sudo`):
+
+```bash
+apt-get update && apt-get install -y build-essential
+```
+
+Still from **`cuda-bench/`** (same clone and `cd` as above):
+
+```bash
+mkdir -p results
+cmake -S C++ -B build_cpp -DCMAKE_BUILD_TYPE=Release
+cmake --build build_cpp -j
+```
+
+Each binary **appends** rows to **`results/results_cpp.csv`**. Remove that file first if you want a single clean sweep without mixing older runs:
+
+```bash
+rm -f results/results_cpp.csv
+for exe in build_cpp/cpp_bench_*; do "./${exe}"; done
+```
+
+The Monte Carlo port can take noticeable wall time on large CPU settings; you can run individual **`build_cpp/cpp_bench_0N_*`** executables if you need a quicker partial pass.
+
+Copy **`results/results_cpp.csv`** off the pod before you delete the instance. To version numbers next to your GPU class, follow **`../performance-results/C++/README.md`** (copy into **`performance-results/C++/RTX-4090/`**, **`…/H100-80GB-HBM3/`**, etc., matching the pod SKU, then run **`python3 ../format_tables.py`** from that folder).
+
 ### Example environments for archived snapshots
 
 The checked-in CSVs under **`../performance-results/CUDA/`** were captured on RunPod **secure cloud** hosts summarized below. RunPod’s UI may say **H100 SXM** while the CSV uses **`gpu_name`** = **`NVIDIA H100 80GB HBM3`**—same GPU class. SKUs, clocks, and pricing change over time; treat these rows as **documentation of the runs that produced each snapshot**, not a guarantee for future pods. CPU **`cuda-bench/C++`** archives for the same three GPU classes live under **`../performance-results/C++/`** (see **`../performance-results/C++/README.md`**).
