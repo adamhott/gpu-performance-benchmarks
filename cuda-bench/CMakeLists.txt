@@ -53,3 +53,5 @@ add_cuda_bench_executable(cuda_bench_04_reduction src/04_reduction.cu)
 add_cuda_bench_executable(cuda_bench_05_montecarlo src/05_montecarlo.cu)
 add_cuda_bench_executable(cuda_bench_06_fft src/06_fft.cu)
 add_cuda_bench_executable(cuda_bench_07_nbody_tree src/07_nbody_tree.cu)
+
+add_subdirectory("C++")

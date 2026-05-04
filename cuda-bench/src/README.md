@@ -14,9 +14,9 @@ Each `NN_name.cu` file builds to a standalone executable (`cuda_bench_NN_name`) 
 
 ## Reference GPU / host environment (measured runs)
 
-Archived CSVs and tables live under **`../../performance-results/`** — see [**`../../performance-results/README.md`**](../../performance-results/README.md). **RTX A4000** → **`RTX-A4000/`**; **RTX 4090** → **`RTX-4090/`**; **H100 80GB HBM3** → **`H100-80GB-HBM3/`**.
+Archived CSVs and tables live under **`../../performance-results/`** — see [**`../../performance-results/README.md`**](../../performance-results/README.md). **CUDA** runs: **`CUDA/RTX-A4000/`**, **`CUDA/RTX-4090/`**, **`CUDA/H100-80GB-HBM3/`**. **C++** host runs for the same three classes: **`C++/RTX-A4000/`**, **`C++/RTX-4090/`**, **`C++/H100-80GB-HBM3/`**.
 
-The RTX A4000 CSV snapshots checked in under `../../performance-results/RTX-A4000/` were captured on a RunPod **secure cloud** pod with the following **Details** (see RunPod UI for live values):
+The RTX A4000 CSV snapshots checked in under `../../performance-results/CUDA/RTX-A4000/` were captured on a RunPod **secure cloud** pod with the following **Details** (see RunPod UI for live values):
 
 | Field | Value |
 | --- | --- |

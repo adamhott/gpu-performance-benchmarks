@@ -1,0 +1,20 @@
+# Portable C++ host ports of the CUDA benchmarks in ../src (no GPU / no nvcc).
+
+function(add_cpp_bench_executable name src)
+  add_executable(${name} ${src})
+  target_include_directories(${name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+  target_compile_features(${name} PRIVATE cxx_std_17)
+  if(MSVC)
+    target_compile_options(${name} PRIVATE /W4 /O2)
+  else()
+    target_compile_options(${name} PRIVATE -Wall -Wextra -O3)
+  endif()
+endfunction()
+
+add_cpp_bench_executable(cpp_bench_01_saxpy 01_saxpy.cpp)
+add_cpp_bench_executable(cpp_bench_02_sgemm 02_sgemm.cpp)
+add_cpp_bench_executable(cpp_bench_03_stencil 03_stencil.cpp)
+add_cpp_bench_executable(cpp_bench_04_reduction 04_reduction.cpp)
+add_cpp_bench_executable(cpp_bench_05_montecarlo 05_montecarlo.cpp)
+add_cpp_bench_executable(cpp_bench_06_fft 06_fft.cpp)
+add_cpp_bench_executable(cpp_bench_07_nbody_tree 07_nbody_tree.cpp)

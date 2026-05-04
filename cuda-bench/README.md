@@ -41,7 +41,7 @@ chmod +x scripts/run_all.sh
 ./scripts/run_all.sh
 ```
 
-Each invocation of `run_all.sh` recreates `results/results.csv` with the header row, then benchmark binaries append one row per measurement for that run. The **N-body** benchmark (`07`) spends **CPU time building an octree** each size (not included in the GPU kernel timing); the CSV row reflects **only** the Barnes–Hut GPU traversal.
+Each invocation of `run_all.sh` recreates `results/results.csv` with the header row, then benchmark binaries append one row per measurement for that run. The **N-body** benchmark (`07`) spends **CPU time building an octree** each size (not included in the GPU kernel timing); the CSV row reflects **only** the Barnes–Hut GPU traversal. The optional **`C++/`** host ports write CPU rows to **`results/results_cpp.csv`** so they never overwrite the GPU CSV from this script.
 
 ## Running on RunPod
 
@@ -55,9 +55,9 @@ For cost tracking, record the pod’s GPU type, hourly rate, and the wall time r
 
 ### Example environments for archived snapshots
 
-The checked-in CSVs under **`../performance-results/`** were captured on RunPod **secure cloud** hosts summarized below. RunPod’s UI may say **H100 SXM** while the CSV uses **`gpu_name`** = **`NVIDIA H100 80GB HBM3`**—same GPU class. SKUs, clocks, and pricing change over time; treat these rows as **documentation of the runs that produced each snapshot**, not a guarantee for future pods.
+The checked-in CSVs under **`../performance-results/CUDA/`** were captured on RunPod **secure cloud** hosts summarized below. RunPod’s UI may say **H100 SXM** while the CSV uses **`gpu_name`** = **`NVIDIA H100 80GB HBM3`**—same GPU class. SKUs, clocks, and pricing change over time; treat these rows as **documentation of the runs that produced each snapshot**, not a guarantee for future pods. CPU **`cuda-bench/C++`** archives for the same three GPU classes live under **`../performance-results/C++/`** (see **`../performance-results/C++/README.md`**).
 
-#### RTX A4000 (`../performance-results/RTX-A4000/`)
+#### RTX A4000 (`../performance-results/CUDA/RTX-A4000/`)
 
 | Field | Value |
 | --- | --- |
@@ -66,7 +66,7 @@ The checked-in CSVs under **`../performance-results/`** were captured on RunPod 
 | **RAM** | 62 GB |
 | **List pricing (snapshot)** | Compute **$0.25/hr**; 20 GB container storage **$0.003/hr**; **~$0.25/hr** total in UI at capture (confirm current RunPod billing). |
 
-#### GeForce RTX 4090 (`../performance-results/RTX-4090/`)
+#### GeForce RTX 4090 (`../performance-results/CUDA/RTX-4090/`)
 
 | Field | Value |
 | --- | --- |
@@ -75,9 +75,9 @@ The checked-in CSVs under **`../performance-results/`** were captured on RunPod 
 | **RAM** | 62 GB |
 | **List pricing (snapshot)** | Compute **$0.69/hr**; 20 GB container storage **$0.003/hr**; **~$0.70/hr** total in UI (confirm current RunPod billing). |
 
-See [**`../performance-results/RTX-4090/README.md`**](../performance-results/RTX-4090/README.md) for the snapshot notes and **`python3 format_tables.py`** refresh.
+See [**`../performance-results/CUDA/RTX-4090/README.md`**](../performance-results/CUDA/RTX-4090/README.md) for the snapshot notes and **`python3 format_tables.py`** refresh.
 
-#### H100 80GB HBM3 / Hopper (`../performance-results/H100-80GB-HBM3/`)
+#### H100 80GB HBM3 / Hopper (`../performance-results/CUDA/H100-80GB-HBM3/`)
 
 | Field | Value |
 | --- | --- |
@@ -87,7 +87,7 @@ See [**`../performance-results/RTX-4090/README.md`**](../performance-results/RTX
 | **Driver / CUDA (session)** | **550.163.01** / CUDA **12.4** (`nvcc` 12.4.x) |
 | **List pricing (snapshot)** | Compute **$2.99/hr**; container + volume storage **$0.003/hr** each (20 GB lines in UI); **~$3.00/hr** total (confirm current RunPod billing). |
 
-See [**`../performance-results/H100-80GB-HBM3/README.md`**](../performance-results/H100-80GB-HBM3/README.md) for the snapshot notes and **`python3 format_tables.py`** refresh.
+See [**`../performance-results/CUDA/H100-80GB-HBM3/README.md`**](../performance-results/CUDA/H100-80GB-HBM3/README.md) for the snapshot notes and **`python3 format_tables.py`** refresh.
 
 ## Research directions (beyond this repo’s microbenchmarks)
 

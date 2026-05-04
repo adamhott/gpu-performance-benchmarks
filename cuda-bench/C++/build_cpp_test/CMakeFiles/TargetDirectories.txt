@@ -1,0 +1,9 @@
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/cpp_bench_01_saxpy.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/cpp_bench_02_sgemm.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/cpp_bench_03_stencil.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/cpp_bench_04_reduction.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/cpp_bench_05_montecarlo.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/cpp_bench_06_fft.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/cpp_bench_07_nbody_tree.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/edit_cache.dir
+/Users/hott/eng/gpu-performance-benchmarks/cuda-bench/C++/build_cpp_test/CMakeFiles/rebuild_cache.dir

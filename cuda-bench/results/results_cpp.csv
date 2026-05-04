@@ -1,0 +1,5 @@
+benchmark,gpu_name,compute_capability,problem_size,variant,mean_ms,stddev_ms,gflops,gb_s,pct_peak_flops,pct_peak_bw
+saxpy,CPU,0.0,1048576,cpu_loop,0.133267,0.00199163,15.7365,94.4191,3.07354,118.024
+saxpy,CPU,0.0,4194304,cpu_loop,0.813875,0.359708,10.307,61.842,2.01309,77.3025
+saxpy,CPU,0.0,16777216,cpu_loop,2.98025,0.645389,11.2589,67.5536,2.19901,84.442
+saxpy,CPU,0.0,67108864,cpu_loop,10.4747,0.502421,12.8135,76.8812,2.50264,96.1015
