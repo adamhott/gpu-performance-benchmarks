@@ -1,7 +1,3 @@
-I've scraped all three GPU folders (H100-80GB-HBM3, RTX-4090, RTX-A4000) and read every file. Here is the complete report in Markdown:
-
----
-
 ```markdown
 # GPU CUDA Benchmark Analysis Report
 **Repository:** `adamhott/gpu-performance-benchmarks` — `performance-results/CUDA/`  
