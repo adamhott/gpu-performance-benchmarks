@@ -125,5 +125,6 @@ CUDA here is a **numeric substrate**. For **numerical relativity / binary black 
 - `include/` — timing, verification helpers, device peak metrics, `cuda_research.cuh` (research-oriented umbrella includes)
 - `cmake/` — optional library discovery (`BenchResearchLibs.cmake`)
 - `src/` — one executable per benchmark (`01_saxpy` … `07_nbody_tree`)
+- `Math/` — per-benchmark math summaries and LaTeX equations ([`Math/README.md`](Math/README.md))
 - `scripts/` — orchestration and plotting (plotting added when more benchmarks land)
 - `results/` — CSV output consumed by plotting scripts
